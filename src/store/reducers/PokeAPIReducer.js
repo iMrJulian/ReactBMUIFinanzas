@@ -14,7 +14,7 @@ const APISlice = createSlice({
   reducers: {
     // actions that modify the state
 
-    listLoading(state, action) {
+    listLoading(state) {
       if (state.loading === "idle") state.loading = "pending";
     },
     firstCharge(state, action) {
@@ -32,13 +32,13 @@ export const { listLoading, firstCharge } = actions;
 
 export const fetchFirst100Pokemons = () => async (dispatch) => {
   // start charging
-  dispatch(listLoading);
+  dispatch(listLoading());
 
   // get API data
   const response = await axios.get(config.APIURI + config.PATHS.firstCharge);
 
   // send API data
-  dispatch(firstCharge(response));
+  dispatch(firstCharge(response.data.results));
 };
 
 export default reducer;

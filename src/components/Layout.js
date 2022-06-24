@@ -10,7 +10,7 @@ const Layout = (props) => {
       sx={{
         width: "100vw",
         display: "flex",
-        backgroundColor: myTheme.palette.secondary.main,
+        backgroundColor: myTheme.palette.background.paper,
       }}
       color={"primary"}
     >
