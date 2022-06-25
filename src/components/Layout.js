@@ -1,21 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { myTheme } from "../theme/theme";
 
 const Layout = (props) => {
   const { children } = props;
   return (
-    <Box
+    <Container
       sx={{
         width: "100vw",
         display: "flex",
         backgroundColor: myTheme.palette.background.paper,
       }}
-      color={"primary"}
     >
-      {children}
-    </Box>
+      <Box>{children}</Box>
+    </Container>
   );
 };
 
